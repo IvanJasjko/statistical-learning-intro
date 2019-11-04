@@ -2,7 +2,7 @@
 
 - Predicting **continuous / quantitative** (numerical) output value => **Regression problem**
 - Non-numerical values => **Categorical / Qualitative**
-- **Clustering Problem ** => e.g. grouping individuals based on observed characteristics, there is no output variable to predict
+- **Clustering Problem** => e.g. grouping individuals based on observed characteristics, there is no output variable to predict
 - *Dimensions* => Traits / Attributes
 - Statistical Learning (a subfield of Statistics) focuses on supervised and unsupervised modelling and prediction
 
