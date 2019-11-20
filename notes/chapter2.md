@@ -36,8 +36,58 @@ Understanding the relationship between X and Y
 
 
 
-Models are chosen on the basis of prediction vs inference vs both. e.g. linear models allow for high inference but might yield less accurate predictions compared to other models.
+Models are chosen on the basis of prediction vs inference vs both, e.g. linear models allow for high inference but might yield less accurate predictions compared to other models.
 
 #### 2.1.2
 
-//TODO
+Observations (number of data points) is referred to as training data
+
+For statistical learning we need to find *ƒ^* such that Y = *ƒ^*(X) for any observation (X, Y), most le\rning methods can be *parametric* or *non-parametric*
+
+#### Parametric Methods
+
+A two step model-based approach:
+
+1. Make an assumption about the functional form of *ƒ*
+2. *Fit* or *Train* the model. (Most common approach is (ordinary) *least squares*)
+
+Parametric approach reduces the problem to estimating a set of parameters.
+
+The downside of parametric approach is that the model of *ƒ* may not match the actual *ƒ*. We can try to use more flexible models which can fit different functional forms, however that would require estimating more parameters and can lead to overfitting the data. 
+
+Overfitting means data is too vairable/sensitive and is heavily influenced by errors and noise, thus yielding inaccurate predictions.
+
+#### Non-parametric Methods
+
+Non-parametric methods do not assume functional form of *ƒ*. However, they require a very large number of observations in order to estimate *ƒ*.
+
+#### 2.1.3
+
+Linear regression is an example of an *inflexible* approach since it can only generate linear functions ( / ).
+
+However, restrictive (inflexible) models are much easier to interpret (useful for inference)
+
+Usually, there is a trade-off between **Interpretability** and **Flexibility**. 
+
+Highly flexible models also have a high risk of overfitting, this sometimes leads to less flexible models (considered less accurate for prediction) yielding better results.
+
+#### 2.1.4
+
+**Unsupervised Learning** problems have no associated response y<sub>i</sub> for x<sub>i</sub>. One of the methods to address these problems is *clustering*
+
+There also are *semi-suprevised* problems, usually when predictors can be measure cheaply, but responses are expensive to collect.
+
+#### 2.1.5
+
+Categorical variables take values from different classes (A, B, C)
+
+Quantitative variables take numberical values (height, width, etc.)
+
+Statistical methods can be used for either qualitative or quantitative responses.
+
+### 2.2
+
+### 2.2.1
+
+
+

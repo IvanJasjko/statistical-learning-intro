@@ -13,4 +13,3 @@
 - *p* => Number of variables (col)
 - *x<sub>i,j</sub>* => Value of j<sup>th</sup> variable for the i<sup>th</sup> observation ( *i* = 1, 2, ..., *n* and *j* = 1, 2, ..., *p*)
 - *y<sub>i</sub>* => i<sup>th</sup> observation of a variable on which prediction will be made
-
