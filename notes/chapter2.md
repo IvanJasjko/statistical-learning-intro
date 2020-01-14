@@ -42,7 +42,7 @@ Models are chosen on the basis of prediction vs inference vs both, e.g. linear m
 
 Observations (number of data points) is referred to as training data
 
-For statistical learning we need to find *ƒ^* such that Y = *ƒ^*(X) for any observation (X, Y), most le\rning methods can be *parametric* or *non-parametric*
+For statistical learning we need to find *ƒ^* such that Y = *ƒ^*(X) for any observation (X, Y), most learning methods can be *parametric* or *non-parametric*
 
 #### Parametric Methods
 
@@ -85,9 +85,23 @@ Quantitative variables take numberical values (height, width, etc.)
 
 Statistical methods can be used for either qualitative or quantitative responses.
 
-### 2.2
+### 2.2 Assessing Model Accuracy
 
-### 2.2.1
+#### 2.2.1
 
+Most common measure of model accuracy in regression setting is *mean squared error* (MSE)
 
+$$
+MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - f'(x_i))^2
+$$
+MSE is small for accurate predictions. Training data MSE is not very relevant compared to MSE inferred from testing data e.g. an MSE for x<sub>0</sub> and y<sub>0</sub> where n = 0 refers to previously unseen observation.
 
+*Smallest training data MSE often may not have the lowest test MSE*
+
+**General Rule: As flexibility of the statistical learning method increases, training MSE is decreasing, while test MSE may not decrease (forming a U shape)**
+
+**Overfitting -> small training MSE and large test MSE** (Training MSE is always expected to be smaller, so overfitting occurs when reduction in training MSE yields larger test MSE than it could have been.)
+
+*Cross-validation* - A good method for estimating test MSE from training data.
+
+#### 2.2.2
