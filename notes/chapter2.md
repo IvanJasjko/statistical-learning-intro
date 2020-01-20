@@ -55,7 +55,7 @@ Parametric approach reduces the problem to estimating a set of parameters.
 
 The downside of parametric approach is that the model of *ƒ* may not match the actual *ƒ*. We can try to use more flexible models which can fit different functional forms, however that would require estimating more parameters and can lead to overfitting the data. 
 
-Overfitting means data is too vairable/sensitive and is heavily influenced by errors and noise, thus yielding inaccurate predictions.
+Overfitting means data is too variable/sensitive and is heavily influenced by errors and noise, thus yielding inaccurate predictions.
 
 #### Non-parametric Methods
 
@@ -81,7 +81,7 @@ There also are *semi-suprevised* problems, usually when predictors can be measur
 
 Categorical variables take values from different classes (A, B, C)
 
-Quantitative variables take numberical values (height, width, etc.)
+Quantitative variables take numerical values (height, width, etc.)
 
 Statistical methods can be used for either qualitative or quantitative responses.
 
@@ -104,4 +104,18 @@ MSE is small for accurate predictions. Training data MSE is not very relevant co
 
 *Cross-validation* - A good method for estimating test MSE from training data.
 
-#### 2.2.2
+#### 2.2.2 Bias vs Variance
+
+Test MSE for any given *x*<sub>0</sub> can be expressed a sum of *variance*, *squared bias* and the variance of the error terms *e* for *f*^(*x*<sub>0</sub>).
+$$
+E(y_0 - f'(x_0))^2 = Var(f'(x_0)) + [Bias(f'(x_0))]^2 + Var(e)
+$$
+To minimize expected MSE, statistical learning method needs low variance and low bias. As variance is non-negative expected MSE can never lie below irreducible error *Var(e)*. 
+
+**Variance** (~) of a statistical learning method determines how *f^* would change if it was estimated using a different training data set. High variance means small changes to the training data lead to large changes in *f^* . More flexible statistical methods usually have higher variance.
+
+**Bias** (-) of a statistical learning method refers to the error introduced by approximating a relationship of true *f*. Generally, flexible models have less bias. 
+
+Variance and Bias tradeoff tunes test MSE.
+
+#### 2.2.3 Classification
