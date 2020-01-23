@@ -75,7 +75,7 @@ Highly flexible models also have a high risk of overfitting, this sometimes lead
 
 **Unsupervised Learning** problems have no associated response y<sub>i</sub> for x<sub>i</sub>. One of the methods to address these problems is *clustering*
 
-There also are *semi-suprevised* problems, usually when predictors can be measure cheaply, but responses are expensive to collect.
+There also are *semi-supervised* problems, usually when predictors can be measure cheaply, but responses are expensive to collect.
 
 #### 2.1.5
 
@@ -119,3 +119,38 @@ To minimize expected MSE, statistical learning method needs low variance and low
 Variance and Bias tradeoff tunes test MSE.
 
 #### 2.2.3 Classification
+
+Previous concepts mentioned were applied to regression, however they can be transferred to classification problems.
+
+In order to quantify the accuracy of *f^* is training *error rate* (the proportion of mistakes when *f^* is applied to training data.
+$$
+\frac{1}{n}\sum_{i=1}^{n}I(y_i \neq y'_i)
+$$
+I is an indicator variable which equals 1 for = and  0 for  ≠
+
+However, we are more interested in the test error rate => Ave(I(y<sub>0</sub> ≠ y^<sub>0</sub>)) for (x<sub>0</sub>, y<sub>0</sub>)
+
+Better classifiers have smaller test error.
+
+**Bayes Classifier** ( Pr(Y = j | X = x<sub>0</sub>) ) assigns observation to most likely class given its predictor values,  where j is the class. It produces the lowest possible test error rate (*Bayes error rate*) since it will always choose a class for which Pr is largest.
+
+Bayes error rate (E averages the probability over all possible values of X):
+$$
+1 - E(max_j  Pr(Y = j|X))
+$$
+
+
+Bayes error rate is analogous to irreducible error. In theory we would always like to predict qualitative responses using Bayes classifier. But for real world data conditional distribution is unknown. Thus, *Bayes Classifier* is an unattainable gold standard for classification.
+
+**K-Nearest Neighbors** 
+$$
+Pr(Y = j | X = x_0)= \frac{1}{K}\sum_{i\in N_0}I(y_i = j)
+$$
+Where N<sub>0</sub> are K points closest to x<sub>0</sub>. KNN estimates conditional probability for class j as the fraction of points in N<sub>0</sub> whose response values (y<sub>i</sub> = j) it then applies Bayes rule and classifies the observation to the most probable class. Despite it's simplicity, KNN often produces results close the Bayes classifier.
+
+As K grows method becomes less flexible and more biased, whereas low K is much more flexible but yields higher variance.
+
+
+
+
+
