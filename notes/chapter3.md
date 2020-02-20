@@ -22,3 +22,18 @@ The estimate of standard deviation is known as RSE (*residual standard errror*) 
 $$
 RSE = \sqrt{RSS/(n - 2)}
 $$
+
+In general, sample mean provides a good estimate for a population mean. Therefore least squares line defines regression line coefficient estimates. Sample mean is an **unbiased** estimate of population mean, because an average of sample means for a large number of samples would be equal to population mean.
+
+**Unbiased** estimator does not systematically over or under estimate the parameter. The least squares line holds **unbiasedness** property.
+
+**standard error** of a sample mean measures how accurate is the sample mean compared to the population mean.
+
+*Var(sample\_mean) = SE(sample\_mean)<sup>2</sup> = (mean\_sd)<sup>2</sup> / n*.
+ Standard error is the average amount by which sample mean differs from the population mean. Additionally, **standard error shrinks when the number of observations is increased**
+ 
+A 95% C.I. is provided 2 SE's for coefficient estimates. 
+ 
+ 
+ 
+ 
