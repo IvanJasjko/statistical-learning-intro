@@ -84,11 +84,11 @@ E{(TSS − RSS)/p} = σ<sup>2</sup> if (H<sub>0</sub> true)
 
 Where *p* represents the number of predictors and *n* represents the sample size.
 
-F-statistic can be closer to 1 to reject H<sub>0</sub> for large *n*. However for smaller *n* F-statistic needs to be large in order to establish that there is a dependancy.
+F-statistic can be closer to 1 to reject H<sub>0</sub> for large *n*. However for smaller *n* F-statistic needs to be large in order to establish that there is a dependency.
 
 F test can also be done on a subset of predictors that excludes *q* predictors. We can modify F test to address it in the following way:
 
-F = ((RSS<sub>0</sub> - RSS)/q ) / (RSS/(n - p - 1))
+F = ( (RSS<sub>0</sub> - RSS) / q ) / ( RSS / (n - p - 1) )
 
 Where RSS<sub>0</sub> is the residual sum of squares for all variables except that last *q* variables. F statistic and most methods can work for smaller numbers of *p* if *p* is large it may not be possible to fit a multiple linear regression model using least squares.
 
@@ -97,9 +97,20 @@ Where RSS<sub>0</sub> is the residual sum of squares for all variables except th
 
 **Note** A general expression of RSE = SQRT(RSS / (n - p - 1)). (n - 2) is used for simple linear regressions as p is always 1 in that case.
 
-//TODO reread final bits of 3.2 and add a few more notes
+**R<sup>2</sup> statistic** will always increase as more variables are added, however if increase is insignificant newly added variables can be discarded. It happens because more variables allow for better fit of training data (not necessarily test data)
+
+**RSE** can also be defined: **RSE = SQRT( RSS / (n - p - 1) )** Hence models with more variables can have higher RSE if the decrease in RSS is small compared to the increase in the number of predictors.
+
+After fitting a multiple regression model there are a few issues:
+
+1. Coefficient estimates (least squares plane) are only and estimate for a true population regression plane
+2. Linear relationships are almost always an approximation of reality, hence there is model bias
+3. Even with perfect coefficients, response can not be predicted perfectly due to irreducible error
+
+To assess how much a predicted response will vary from a true one *prediction intervals* are needed. Prediction intervals will always be wider than a confidence interval because they account for both reducible and irreducible errors
 
 ### 3.3.1
+
 
 
  
